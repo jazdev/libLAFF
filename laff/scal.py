@@ -12,6 +12,11 @@ def scal(alpha, x):
 
     assert type(x) is matrix and len(x.shape) is 2, "laff.scal: vector x must be a 2D numpy.matrix"
 
+    if(type(alpha) is matrix):
+        m_alpha, n_alpha = alpha.shape
+        
+    assert isinstance(alpha,(int,float,complex)) or (m_alpha is 1 and n_alpha is 1), "laff.scal: alpha must be a scalar or a 1 x 1 matrix"
+
     m_x, n_x = x.shape
 
     if m_x is 1: # x is a row
