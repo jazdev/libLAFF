@@ -10,6 +10,11 @@ def axpy(alpha, x, y):
 
     assert type(y) is matrix and len(y.shape) is 2, "laff.axpy: vector y must be a 2D numpy.matrix"
 
+    if(type(alpha) is matrix):
+        m_alpha, n_alpha = alpha.shape
+        
+    assert isinstance(alpha,(int,float,complex)) or (m_alpha is 1 and n_alpha is 1), "laff.scal: alpha must be a scalar or a 1 x 1 matrix"
+
     m_x, n_x = x.shape
     m_y, n_y = y.shape
     
