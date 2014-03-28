@@ -5,4 +5,4 @@ from laff.scal import scal
 from laff.axpy import axpy
 from laff.norm2 import norm2
 from laff.dot import dot
-
+from laff.dots import dots
