@@ -1,21 +1,21 @@
-import laff
-import numpy as np
+
+from Set_to_zero import Set_to_zero_unb_var1
+
+from numpy import random
+from numpy import matrix
 
 #########################################
-# copy tests
-print "Testing copy()"
+#       Set_to_zero
+#########################################
+A = matrix( random.rand( 5,4 ) )
 
-x = np.matrix( '1 2 3' )
-y = np.matrix('0 -2 -3')
-print( "x = " )
-print( x )
-print( "y = " )
-print( y )
-laff.copy( x, y )
-print( "y = " )
-print( y )
-assert np.array_equal(x,y), "error!"
+print( 'A before =' )
+print( A )
 
+Set_to_zero_unb_var1( A )
+
+print( 'A after =' )
+print( A )
 #########################################
 
 
