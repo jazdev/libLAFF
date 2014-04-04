@@ -3,7 +3,7 @@ from Set_to_zero import Set_to_zero_unb_var1, Set_to_zero_unb_var2
 from Set_to_identity import Set_to_identity_unb_var1, Set_to_identity_unb_var2
 from Set_to_diagonal import Set_to_diagonal_matrix_unb_var1, Set_to_diagonal_matrix_unb_var2
 from Set_to_lower_triangular import Set_to_lower_triangular_matrix_unb_var1, Set_to_lower_triangular_matrix_unb_var2
-
+from Transpose import Transpose_unb_var1, Transpose_unb_var2
 from numpy import random
 from numpy import matrix
 
@@ -97,3 +97,33 @@ from numpy import matrix
 ###########################################
 
 
+
+###########################################
+###       Transpose
+###########################################
+##print "Using Transpose_unb_var1"
+##A = matrix( random.rand( 5,4 ) )
+##B = matrix( random.rand( 4,5 ) )
+##print( 'A ' )
+##print( A )
+##print( 'B before =' )
+##print( B )
+##Transpose_unb_var1( A, B )
+##print( 'A ' )
+##print( A )
+##print( 'B after =' )
+##print( B )
+##
+##print "Using Transpose_unb_var1"
+##A = matrix( random.rand( 5,4 ) )
+##B = matrix( random.rand( 4,5 ) )
+##print( 'A ' )
+##print( A )
+##print( 'B before =' )
+##print( B )
+##Transpose_unb_var2( A, B )
+##print( 'A ' )
+##print( A )
+##print( 'B after =' )
+##print( B )
+###########################################
