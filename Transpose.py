@@ -5,7 +5,15 @@ import flame
 import laff as laff
 
 def Transpose_unb_var1(A, B):
+    """
+	Transpose_unb_var1(matrix, matrix)	
+	
+	Transposes matrix A and stores result in matrix B.
 
+	Traverses matrix A from LEFT to RIGHT,
+	matrix B from TOP to BOTTOM,
+	and copies columns of A to rows of B.
+    """
     AL, AR = flame.part_1x2(A, \
                             0, 'LEFT')
 
@@ -41,7 +49,15 @@ def Transpose_unb_var1(A, B):
 
 
 def Transpose_unb_var2(A, B):
+    """
+	Transpose_unb_var1(matrix, matrix)	
+	
+	Transposes matrix A and stores result in matrix B.
 
+	Traverses matrix A from TOP to BOTTOM,
+	matrix B from LEFT to RIGHT,
+	and copies rows of A to columns of B.
+    """
     AT, \
     AB  = flame.part_2x1(A, \
                          0, 'TOP')
