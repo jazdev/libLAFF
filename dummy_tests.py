@@ -4,6 +4,8 @@ from Set_to_identity import Set_to_identity_unb_var1, Set_to_identity_unb_var2
 from Set_to_diagonal import Set_to_diagonal_matrix_unb_var1, Set_to_diagonal_matrix_unb_var2
 from Set_to_lower_triangular import Set_to_lower_triangular_matrix_unb_var1, Set_to_lower_triangular_matrix_unb_var2
 from Transpose import Transpose_unb_var1, Transpose_unb_var2
+from Symmetrize_from_lower_triangle import Symmetrize_from_lower_triangle_unb_var1, Symmetrize_from_lower_triangle_unb_var2
+
 from numpy import random
 from numpy import matrix
 
@@ -126,4 +128,25 @@ from numpy import matrix
 ##print( A )
 ##print( 'B after =' )
 ##print( B )
+###########################################
+
+
+###########################################
+###       Symmetrize_from_lower_triangle
+###########################################
+##print "Using Symmetrize_from_lower_triangle_unb_var1"
+##A = matrix( random.rand( 5,5 ) )
+##print( 'A before =' )
+##print( A )
+##Symmetrize_from_lower_triangle_unb_var1( A )
+##print( 'A after =' )
+##print( A )
+##
+##print "Using Symmetrize_from_lower_triangle_unb_var2"
+##A = matrix( random.rand( 5,5 ) )
+##print( 'A before =' )
+##print( A )
+##Symmetrize_from_lower_triangle_unb_var2( A )
+##print( 'A after =' )
+##print( A )
 ###########################################
