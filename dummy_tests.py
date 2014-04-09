@@ -5,6 +5,7 @@ from Set_to_diagonal import Set_to_diagonal_matrix_unb_var1, Set_to_diagonal_mat
 from Set_to_lower_triangular import Set_to_lower_triangular_matrix_unb_var1, Set_to_lower_triangular_matrix_unb_var2
 from Transpose import Transpose_unb_var1, Transpose_unb_var2
 from Symmetrize_from_lower_triangle import Symmetrize_from_lower_triangle_unb_var1, Symmetrize_from_lower_triangle_unb_var2
+from Scale_a_matrix import Scale_a_matrix_unb_var1, Scale_a_matrix_unb_var2
 
 from numpy import random
 from numpy import matrix
@@ -147,6 +148,31 @@ from numpy import matrix
 ##print( 'A before =' )
 ##print( A )
 ##Symmetrize_from_lower_triangle_unb_var2( A )
+##print( 'A after =' )
+##print( A )
+###########################################
+
+
+###########################################
+###       Scale_a_matrix_unb_var2
+###########################################
+##print "Using Scale_a_matrix_unb_var1"
+##beta = matrix( '2.' )
+##A = matrix( random.rand( 5,4 ) )
+##print( 'beta = ' )
+##print( beta )
+##print( 'A before =' )
+##print( A )
+##Scale_a_matrix_unb_var1( beta, A )
+##print( 'A after =' )
+##print( A )
+##
+##print "Using Scale_a_matrix_unb_var2"
+##beta = matrix( '2' );
+##A = matrix( random.rand( 5,4 ) )
+##print( 'A before =' )
+##print( A )
+##Scale_a_matrix_unb_var2( beta, A )
 ##print( 'A after =' )
 ##print( A )
 ###########################################
