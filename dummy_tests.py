@@ -6,7 +6,9 @@ from Set_to_lower_triangular import Set_to_lower_triangular_matrix_unb_var1, Set
 from Transpose import Transpose_unb_var1, Transpose_unb_var2
 from Symmetrize_from_lower_triangle import Symmetrize_from_lower_triangle_unb_var1, Symmetrize_from_lower_triangle_unb_var2
 from Scale_a_matrix import Scale_a_matrix_unb_var1, Scale_a_matrix_unb_var2
-from Mvmult_n import Mvmult_n_unb_var1
+from Mvmult_n import Mvmult_n_unb_var1, Mvmult_n_unb_var2
+from Mvmult_t import Mvmult_t_unb_var1, Mvmult_t_unb_var2
+
 
 from numpy import random
 from numpy import matrix
@@ -200,6 +202,64 @@ import laff as laff
 ##print( y )
 ##print( 'y - ( A * x + yold ) = ' )
 ##print( y - ( A * x + yold ) )
+##
+##print "Using Mvmult_n_unb_var2"
+##A = matrix( random.rand( 4,3 ) )
+##x = matrix( random.rand( 3,1 ) )
+##y = matrix( random.rand( 4,1 ) )
+##yold = matrix( random.rand( 4,1 ) )
+##print( 'y before =' )
+##print( y )
+##print( 'x before =' )
+##print( x )
+##print( 'y before =' )
+##print( y )
+##laff.copy( y, yold )   # save the original vector y
+##Mvmult_n_unb_var2( A, x, y )
+##print( 'y after =' )
+##print( y )
+##print( 'y - ( A * x + yold ) = ' )
+##print( y - ( A * x + yold ) )
 ###########################################
 
 
+
+###########################################
+###       Mvmult_t
+###########################################
+##print "Using Mvmult_t_unb_var1"
+##A = matrix( random.rand( 3,4 ) )
+##x = matrix( random.rand( 3,1 ) )
+##y = matrix( random.rand( 4,1 ) )
+##yold = matrix( random.rand( 4,1 ) )
+##print( 'A before =' )
+##print( A )
+##print( 'x before =' )
+##print( x )
+##print( 'y before =' )
+##print( y )
+##laff.copy( y, yold )   # save the original vector y
+##Mvmult_t_unb_var1( A, x, y )
+##print( 'y after =' )
+##print( y )
+##print( 'y - ( transpose( A ) * x + yold ) = ' )
+##print( y - ( transpose( A ) * x + yold ) )
+##
+##print "Using Mvmult_t_unb_var2"
+##A = matrix( random.rand( 3,4 ) )
+##x = matrix( random.rand( 3,1 ) )
+##y = matrix( random.rand( 4,1 ) )
+##yold = matrix( random.rand( 4,1 ) )
+##print( 'A before =' )
+##print( y )
+##print( 'x before =' )
+##print( x )
+##print( 'y before =' )
+##print( y )
+##laff.copy( y, yold )   # save the original vector y
+##Mvmult_t_unb_var2( A, x, y )
+##print( 'y after =' )
+##print( y )
+##print( 'y - ( transpose( A ) * x + yold ) = ' )
+##print( y - ( transpose( A ) * x + yold ) )
+###########################################
