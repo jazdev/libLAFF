@@ -8,7 +8,7 @@ def Mvmult_n_unb_var1(A, x, y):
     """
 	Mvmult_n_unb_var1(matrix, vector, vector)	
 
-	Compuyes y = A * x + y
+	Compuyes y = A * x + y using DOT products.
 
 	Traverses matrix A from TOP to BOTTOM,
 	vector y from TOP to BOTTOM.
@@ -52,3 +52,42 @@ def Mvmult_n_unb_var1(A, x, y):
     flame.merge_2x1(yT, \
                     yB, y)
 
+
+
+def Mvmult_n_unb_var2(A, x, y):
+    """
+	Mvmult_n_unb_var2(matrix, vector, vector)	
+
+	Compuyes y = A * x + y using AXPY operations.
+
+	Traverses matrix A from LEFT to RIGHT,
+	vector x from TOP to BOTTOM.
+    """
+    AL, AR = flame.part_1x2(A, \
+                            0, 'LEFT')
+
+    xT, \
+    xB  = flame.part_2x1(x, \
+                         0, 'TOP')
+
+    while AL.shape[1] < A.shape[1]:
+
+        A0, a1, A2 = flame.repart_1x2_to_1x3(AL, AR, \
+                                             1, 'RIGHT')
+
+        x0,   \
+        chi1, \
+        x2    = flame.repart_2x1_to_3x1(xT, \
+                                        xB, \
+                                        1, 'BOTTOM')
+
+        laff.axpy( chi1, a1, y )
+
+        AL, AR = flame.cont_with_1x3_to_1x2(A0, a1, A2, \
+                                            'LEFT')
+
+        xT, \
+        xB  = flame.cont_with_3x1_to_2x1(x0,   \
+                                         chi1, \
+                                         x2,   \
+                                         'TOP')
