@@ -62,7 +62,7 @@ def Trmv_un_unb_var2(U, x):
     """
 	Trmv_un_unb_var2(matrix, vector)	
 
-	Computes y = U * x using DOT products.
+	Computes y = U * x using AXPY operations.
 	U is the upper triangular matrix.
 
 	Traverses matrix U from TOP-LEFT to BOTTOM-RIGHT,
