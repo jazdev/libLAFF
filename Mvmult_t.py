@@ -8,7 +8,7 @@ def Mvmult_t_unb_var1(A, x, y):
     """
 	Mvmult_t_unb_var1(matrix, vector, vector)	
 
-	Compuyes y = A' * x + y using DOT products.
+	Computes y = A' * x + y using DOT products.
 
 	Traverses matrix A from LEFT to RIGHT,
 	vector y from TOP to BOTTOM.
@@ -51,7 +51,7 @@ def Mvmult_t_unb_var2(A, x, y):
     """
 	Mvmult_t_unb_var2(matrix, vector, vector)	
 
-	Compuyes y = A' * x + y using AXPY operations.
+	Computes y = A' * x + y using AXPY operations.
 
 	Traverses matrix A from TOP to BOTTOM,
 	vector x from TOP to BOTTOM.
