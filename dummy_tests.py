@@ -9,6 +9,8 @@ from Scale_a_matrix import Scale_a_matrix_unb_var1, Scale_a_matrix_unb_var2
 from Mvmult_n import Mvmult_n_unb_var1, Mvmult_n_unb_var2
 from Mvmult_t import Mvmult_t_unb_var1, Mvmult_t_unb_var2
 from Tmvmult_un import Tmvmult_un_unb_var1, Tmvmult_un_unb_var2
+from Tmvmult_ln import Tmvmult_ln_unb_var1, Tmvmult_ln_unb_var2
+
 
 import numpy as np
 from numpy import random
@@ -310,3 +312,45 @@ import laff as laff
 ###########################################
 
 
+
+###########################################
+###       Tmvmult_ln
+###########################################
+##print "Using Tmvmult_ln_unb_var1"
+##L = matrix( random.rand( 4,4 ) )
+##x = matrix( random.rand( 4,1 ) )
+##y = matrix( random.rand( 4,1 ) )
+##yold = matrix( random.rand( 4,1 ) )
+### Notice that L is not lower triangular.  We will only use the lower triangular part.
+##print( 'L before =' )
+##print( L )
+##print( 'x before =' )
+##print( x )
+##print( 'y before =' )
+##print( y )
+##laff.copy( y, yold )   # save the original vector y
+##Tmvmult_ln_unb_var1( L, x, y )
+##print( 'y after =' )
+##print( y )
+##print( 'y - ( np.tril( L ) * x + yold ) = ' ) #np.tril makes the matrix lower triangular
+##print( y - ( np.tril( L ) * x + yold ) )
+##
+##print "Using Tmvmult_ln_unb_var2"
+##L = matrix( random.rand( 4,4 ) )
+##x = matrix( random.rand( 4,1 ) )
+##y = matrix( random.rand( 4,1 ) )
+##yold = matrix( random.rand( 4,1 ) )
+### L is not lower triangular.  We will only use the lower triangular part.
+##print( 'L before =' )
+##print( L )
+##print( 'x before =' )
+##print( x )
+##print( 'y before =' )
+##print( y )
+##laff.copy( y, yold )   # save the original vector y
+##Tmvmult_ln_unb_var2( L, x, y )
+##print( 'y after =' )
+##print( y )
+##print( 'y - ( np.tril( L ) * x + yold ) = ' ) #np.tril makes the matrix lower triangular
+##print( y - ( np.tril( L ) * x + yold ) )
+###########################################
