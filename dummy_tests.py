@@ -12,6 +12,8 @@ from Tmvmult_un import Tmvmult_un_unb_var1, Tmvmult_un_unb_var2
 from Tmvmult_ln import Tmvmult_ln_unb_var1, Tmvmult_ln_unb_var2
 from Trmv_un import Trmv_un_unb_var1, Trmv_un_unb_var2
 from Trmv_ln import Trmv_ln_unb_var1, Trmv_ln_unb_var2
+from Tmvmult_lt import Tmvmult_lt_unb_var1, Tmvmult_lt_unb_var2
+
 
 import numpy as np
 from numpy import random
@@ -433,6 +435,58 @@ import laff as laff
 ##print( 'x - ( np.tril( L ) * xold ) = ' ) #np.tril makes the matrix lower triangular
 ##print( x - ( np.tril( L ) * xold ) )
 ###########################################
+
+
+
+
+###########################################
+###       Tmvmult_lt
+###########################################
+##print "Using Tmvmult_lt_unb_var1"
+##L = matrix( random.rand( 4,4 ) )
+##x = matrix( random.rand( 4,1 ) )
+##y = matrix( random.rand( 4,1 ) )
+##yold = matrix( random.rand( 4,1 ) )
+### Notice that L is not lower triangular.  We will only use the lower triangular part.
+##print( 'L before =' )
+##print( L )
+##print( 'x before =' )
+##print( x )
+##print( 'y before =' )
+##print( y )
+##laff.copy( y, yold )   # save the original vector y
+##Tmvmult_lt_unb_var1( L, x, y )
+##print( 'y after =' )
+##print( y )
+###np.tril makes the matrix lower triangular
+##print( 'y - ( np.transpose( np.tril( L ) ) * x + yold ) = ' )
+##print( y - ( np.transpose( np.tril( L ) ) * x + yold ) )
+##
+##
+##print "Using Tmvmult_lt_unb_var2"
+##L = matrix( random.rand( 4,4 ) )
+##x = matrix( random.rand( 4,1 ) )
+##y = matrix( random.rand( 4,1 ) )
+##yold = matrix( random.rand( 4,1 ) )
+### L is not lower triangular.  We will only use the lower triangular part.
+##print( 'L before =' )
+##print( L )
+##print( 'x before =' )
+##print( x )
+##print( 'y before =' )
+##print( y )
+##laff.copy( y, yold )   # save the original vector y
+##Tmvmult_lt_unb_var2( L, x, y )
+##print( 'y after =' )
+##print( y )
+###np.tril makes the matrix lower triangular
+##print( 'y - ( np.transpose( np.tril( L ) ) * x + yold ) = ' )
+##print( y - ( np.transpose( np.tril( L ) ) * x + yold ) )
+###########################################
+
+
+
+
 
 
 
