@@ -263,3 +263,7 @@ import laff as laff
 ##print( 'y - ( transpose( A ) * x + yold ) = ' )
 ##print( y - ( transpose( A ) * x + yold ) )
 ###########################################
+
+
+
+
