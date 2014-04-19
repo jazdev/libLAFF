@@ -10,7 +10,7 @@ def Tmvmult_ut_unb_var1(U, x, y):
 
 	Computes y = U' * x + y using DOT products.
 
-	Traverses matrix A from TOP-LEFT to BOTTOM-RIGHT,
+	Traverses matrix U from TOP-LEFT to BOTTOM-RIGHT,
 	vector x from TOP to BOTTOM,
 	vector y from TOP to BOTTOM.
     """

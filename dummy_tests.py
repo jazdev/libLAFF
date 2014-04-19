@@ -14,6 +14,8 @@ from Trmv_un import Trmv_un_unb_var1, Trmv_un_unb_var2
 from Trmv_ln import Trmv_ln_unb_var1, Trmv_ln_unb_var2
 from Tmvmult_lt import Tmvmult_lt_unb_var1, Tmvmult_lt_unb_var2
 from Tmvmult_ut import Tmvmult_ut_unb_var1, Tmvmult_ut_unb_var2
+from Trmv_lt import Trmv_lt_unb_var1, Trmv_lt_unb_var2
+
 
 import numpy as np
 from numpy import random
@@ -487,50 +489,88 @@ import laff as laff
 
 
 
+###########################################
+###       Tmvmult_ut
+###########################################
+##print "Using Tmvmult_ut_unb_var1"
+##U = matrix( random.rand( 4,4 ) )
+##x = matrix( random.rand( 4,1 ) )
+##y = matrix( random.rand( 4,1 ) )
+##yold = matrix( random.rand( 4,1 ) )
+### Notice that U is not upper triangular.  We will only use the upper triangular part.
+##print( 'U before =' )
+##print( U )
+##print( 'x before =' )
+##print( x )
+##print( 'y before =' )
+##print( y )
+##laff.copy( y, yold )   # save the original vector y
+##Tmvmult_ut_unb_var1( U, x, y )
+##print( 'y after =' )
+##print( y )
+###np.triu makes the matrix upper triangular
+##print( 'y - ( np.transpose( np.triu( U ) ) * x + yold ) = ' )
+##print( y - ( np.transpose( np.triu( U ) ) * x + yold ) )
+##
+##
+##print "Using Tmvmult_ut_unb_var2"
+##U = matrix( random.rand( 4,4 ) )
+##x = matrix( random.rand( 4,1 ) )
+##y = matrix( random.rand( 4,1 ) )
+##yold = matrix( random.rand( 4,1 ) )
+### U is not upper triangular.  We will only use the upper triangular part.
+##print( 'U before =' )
+##print( U )
+##print( 'x before =' )
+##print( x )
+##print( 'y before =' )
+##print( y )
+##laff.copy( y, yold )   # save the original vector y
+##Tmvmult_ut_unb_var2( U, x, y )
+##print( 'y after =' )
+##print( y )
+###np.triu makes the matrix upper triangular
+##print( 'y - ( np.transpose( np.triu( U ) ) * x + yold ) = ' )
+##print( y - ( np.transpose( np.triu( U ) ) * x + yold ) )
+###########################################
+
+
+
+
 #########################################
-#       Tmvmult_ut
+#       Trmv_lt
 #########################################
-print "Using Tmvmult_ut_unb_var1"
-U = matrix( random.rand( 4,4 ) )
+print "Using Trmv_lt_unb_var1"
+L = matrix( random.rand( 4,4 ) )
 x = matrix( random.rand( 4,1 ) )
-y = matrix( random.rand( 4,1 ) )
-yold = matrix( random.rand( 4,1 ) )
-# Notice that U is not upper triangular.  We will only use the upper triangular part.
-print( 'U before =' )
-print( U )
+xold = matrix( random.rand( 4,1 ) )
+# Notice that L is not lower triangular.  We will only use the lower triangular part.
+print( 'L before =' )
+print( L )
 print( 'x before =' )
 print( x )
-print( 'y before =' )
-print( y )
-laff.copy( y, yold )   # save the original vector y
-Tmvmult_ut_unb_var1( U, x, y )
-print( 'y after =' )
-print( y )
-#np.triu makes the matrix upper triangular
-print( 'y - ( np.transpose( np.triu( U ) ) * x + yold ) = ' )
-print( y - ( np.transpose( np.triu( U ) ) * x + yold ) )
+laff.copy( x, xold )   # save the original vector x
+Trmv_lt_unb_var1( L, x )
+print( 'x after =' )
+print( x )
+#np.tril makes the matrix lower triangular
+print( 'x - ( np.transpose( np.tril( L ) ) * xold ) = ' )
+print( x - ( np.transpose( np.tril( L ) ) * xold ) )
 
-
-print "Using Tmvmult_ut_unb_var2"
-U = matrix( random.rand( 4,4 ) )
+print "Using Trmv_lt_unb_var2"
+L = matrix( random.rand( 4,4 ) )
 x = matrix( random.rand( 4,1 ) )
-y = matrix( random.rand( 4,1 ) )
-yold = matrix( random.rand( 4,1 ) )
-# U is not upper triangular.  We will only use the upper triangular part.
-print( 'U before =' )
-print( U )
+xold = matrix( random.rand( 4,1 ) )
+# L is not lower triangular.  We will only use the lower triangular part.
+print( 'L before =' )
+print( L )
 print( 'x before =' )
 print( x )
-print( 'y before =' )
-print( y )
-laff.copy( y, yold )   # save the original vector y
-Tmvmult_ut_unb_var2( U, x, y )
-print( 'y after =' )
-print( y )
-#np.triu makes the matrix upper triangular
-print( 'y - ( np.transpose( np.triu( U ) ) * x + yold ) = ' )
-print( y - ( np.transpose( np.triu( U ) ) * x + yold ) )
+laff.copy( x, xold )   # save the original vector y
+Trmv_lt_unb_var2( L, x )
+print( 'x after =' )
+print( x )
+#np.tril makes the matrix lower triangular
+print( 'x - ( np.transpose( np.tril( L ) ) * xold ) = ' )
+print( x - ( np.transpose( np.tril( L ) ) * xold ) )
 #########################################
-
-
-
