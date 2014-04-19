@@ -11,3 +11,9 @@ from Symmetrize_from_lower_triangle import Symmetrize_from_lower_triangle_unb_va
 from Scale_a_matrix import Scale_a_matrix_unb_var1, Scale_a_matrix_unb_var2
 from Mvmult_n import Mvmult_n_unb_var1, Mvmult_n_unb_var2
 from Mvmult_t import Mvmult_t_unb_var1, Mvmult_t_unb_var2
+from Tmvmult_un import Tmvmult_un_unb_var1, Tmvmult_un_unb_var2
+from Tmvmult_ln import Tmvmult_ln_unb_var1, Tmvmult_ln_unb_var2
+from Trmv_un import Trmv_un_unb_var1, Trmv_un_unb_var2
+from Trmv_ln import Trmv_ln_unb_var1, Trmv_ln_unb_var2
+from Tmvmult_lt import Tmvmult_lt_unb_var1, Tmvmult_lt_unb_var2
+from Tmvmult_ut import Tmvmult_ut_unb_var1, Tmvmult_ut_unb_var2
