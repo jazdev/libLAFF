@@ -9,3 +9,4 @@ from laff.dots import dots
 from laff.zerov import zerov
 from laff.onev import onev
 from laff.invscal import invscal
+from laff.gemm import gemm
