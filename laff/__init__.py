@@ -10,3 +10,5 @@ from laff.zerov import zerov
 from laff.onev import onev
 from laff.invscal import invscal
 from laff.gemm import gemm
+from laff.gemv import gemv
+from laff.ger import ger
