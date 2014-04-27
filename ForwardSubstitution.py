@@ -2,14 +2,16 @@
 #                
 
 import flame
+import laff
 
 def ForwardSubstitution_unb(A, b):
     """
-	GaussianElimination_unb(matrix, vector, vector)	
+	ForwardSubstitution_unb(matrix, vector)	
 
-	Computes the Gauss Transform of the input matrix.
+	Computes coefficients using Forward Substituion.
 
-	Traverses matrix A from TOP-LEFT to BOTTOM-RIGHT.
+	Traverses matrix A from TOP-LEFT to BOTTOM-RIGHT,
+	vector b from TOP to BOTTOM.
     """
     ATL, ATR, \
     ABL, ABR  = flame.part_2x2(A, \

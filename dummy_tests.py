@@ -19,6 +19,8 @@ from Trmv_ut import Trmv_ut_unb_var1, Trmv_ut_unb_var2
 from Symv_u import Symv_u_unb_var1, Symv_u_unb_var2
 
 from GaussianElimination import GaussianElimination_unb
+from ForwardSubstitution import ForwardSubstitution_unb
+
 
 import numpy as np
 from numpy import random
@@ -667,97 +669,97 @@ import laff as laff
 
 
 
-#########################################
-#       GaussianElimination
-#               &
-#       ForwardSubstitution
-#########################################
-print "Using GaussianElimination_unb"
-L = np.matrix( ' 1, 0, 0. 0;\
-                -2, 1, 0, 0;\
-                 1,-3, 1, 0;\
-                 2, 3,-1, 1' )
-U = np.matrix( ' 2,-1, 3,-2;\
-                 0,-2, 1,-1;\
-                 0, 0, 1, 2;\
-                 0, 0, 0, 3' )
-A = L * U
-print( 'A = ' )
-print( A )
-# create a solution vector x
-x = np.matrix( '-1;\
-                 2;\
-                 1;\
-                -2' )
-# store the original value of x
-xold = np.matrix( np.copy( x ) )
-# create a solution vector b so that A x = b
-b = A * x
-print( 'b = ' )
-print( b )
-L0 = np.matrix( ' 1, 0, 0, 0;\
-                  2, 1, 0, 0;\
-                 -1, 0, 1, 0;\
-                 -2, 0, 0, 1' );
-A = L0 * A
-print( A )
-L1 = np.matrix( ' 1, 0, 0, 0;\
-                  0, 1, 0, 0;\
-                  0, 3, 1, 0;\
-                  0, -3, 0, 1' );
-A = L1 * A
-print( A )
-L2 = np.matrix( ' 1, 0, 0, 0;\
-                  0, 1, 0, 0;\
-                  0, 0, 1, 0;\
-                  0, 0, 1, 1' );
-A = L2 * A
-print( A )
-b = L0 * b
-b = L1 * b
-b = L2 * b
-print( 'b after forward substitution (application of Gauss transforms):' )
-print( b )
-
-x[ 3 ] = b[ 3 ] / A[ 3,3 ]
-x[ 2 ] = ( b[ 2 ] - A[ 2,3 ] * x[ 3 ] ) / A[ 2,2 ]
-x[ 1 ] = ( b[ 1 ] - A[ 1,2 ] * x[ 2 ] - A[ 1,3 ] * x[ 3 ] ) / A[ 1,1 ]
-x[ 0 ] = ( b[ 0 ] - A[ 0,1 ] * x[ 1 ] - A[ 0,2 ] * x[ 2 ]- A[ 0,3 ] * x[ 3 ] ) / A[ 0,0 ]
-
-print( 'x = ' )
-print( x )
-print( 'x - xold' )
-print( x - xold )
-
-# recreate matrix A
-A = L * U
-
-# recreate the right-hand side
-b = A * xold
-
-# apply Gaussian elimination to matrix A
-GaussianElimination_unb( A )
-
-print( A )
-print( 'Original L' )
-print( L )
-print( 'Original U' )
-print( U )
-
-
-
-print( A )
-print( b )
-ForwardSubstitution_unb( A, b )
-print( 'updated b' )
-print( b )
-x[ 3 ] = b[ 3 ] / A[ 3,3 ]
-x[ 2 ] = ( b[ 2 ] - A[ 2,3 ] * x[ 3 ] ) / A[ 2,2 ]
-x[ 1 ] = ( b[ 1 ] - A[ 1,2 ] * x[ 2 ] - A[ 1,3 ] * x[ 3 ] ) / A[ 1,1 ]
-x[ 0 ] = ( b[ 0 ] - A[ 0,1 ] * x[ 1 ] - A[ 0,2 ] * x[ 2 ]- A[ 0,3 ] * x[ 3 ] ) / A[ 0,0 ]
-print( 'x = ' )
-print( x )
-print( 'x - xold' )
-print( x - xold )
-
-#########################################
+###########################################
+###       GaussianElimination
+###               &
+###       ForwardSubstitution
+###########################################
+##print "Using GaussianElimination_unb"
+##L = np.matrix( ' 1, 0, 0. 0;\
+##                -2, 1, 0, 0;\
+##                 1,-3, 1, 0;\
+##                 2, 3,-1, 1' )
+##U = np.matrix( ' 2,-1, 3,-2;\
+##                 0,-2, 1,-1;\
+##                 0, 0, 1, 2;\
+##                 0, 0, 0, 3' )
+##A = L * U
+##print( 'A = ' )
+##print( A )
+### create a solution vector x
+##x = np.matrix( '-1;\
+##                 2;\
+##                 1;\
+##                -2' )
+### store the original value of x
+##xold = np.matrix( np.copy( x ) )
+### create a solution vector b so that A x = b
+##b = A * x
+##print( 'b = ' )
+##print( b )
+##L0 = np.matrix( ' 1, 0, 0, 0;\
+##                  2, 1, 0, 0;\
+##                 -1, 0, 1, 0;\
+##                 -2, 0, 0, 1' );
+##A = L0 * A
+##print( A )
+##L1 = np.matrix( ' 1, 0, 0, 0;\
+##                  0, 1, 0, 0;\
+##                  0, 3, 1, 0;\
+##                  0, -3, 0, 1' );
+##A = L1 * A
+##print( A )
+##L2 = np.matrix( ' 1, 0, 0, 0;\
+##                  0, 1, 0, 0;\
+##                  0, 0, 1, 0;\
+##                  0, 0, 1, 1' );
+##A = L2 * A
+##print( A )
+##b = L0 * b
+##b = L1 * b
+##b = L2 * b
+##print( 'b after forward substitution (application of Gauss transforms):' )
+##print( b )
+##
+##x[ 3 ] = b[ 3 ] / A[ 3,3 ]
+##x[ 2 ] = ( b[ 2 ] - A[ 2,3 ] * x[ 3 ] ) / A[ 2,2 ]
+##x[ 1 ] = ( b[ 1 ] - A[ 1,2 ] * x[ 2 ] - A[ 1,3 ] * x[ 3 ] ) / A[ 1,1 ]
+##x[ 0 ] = ( b[ 0 ] - A[ 0,1 ] * x[ 1 ] - A[ 0,2 ] * x[ 2 ]- A[ 0,3 ] * x[ 3 ] ) / A[ 0,0 ]
+##
+##print( 'x = ' )
+##print( x )
+##print( 'x - xold' )
+##print( x - xold )
+##
+### recreate matrix A
+##A = L * U
+##
+### recreate the right-hand side
+##b = A * xold
+##
+### apply Gaussian elimination to matrix A
+##GaussianElimination_unb( A )
+##
+##print( A )
+##print( 'Original L' )
+##print( L )
+##print( 'Original U' )
+##print( U )
+##
+##
+##
+##print( A )
+##print( b )
+##ForwardSubstitution_unb( A, b )
+##print( 'updated b' )
+##print( b )
+##x[ 3 ] = b[ 3 ] / A[ 3,3 ]
+##x[ 2 ] = ( b[ 2 ] - A[ 2,3 ] * x[ 3 ] ) / A[ 2,2 ]
+##x[ 1 ] = ( b[ 1 ] - A[ 1,2 ] * x[ 2 ] - A[ 1,3 ] * x[ 3 ] ) / A[ 1,1 ]
+##x[ 0 ] = ( b[ 0 ] - A[ 0,1 ] * x[ 1 ] - A[ 0,2 ] * x[ 2 ]- A[ 0,3 ] * x[ 3 ] ) / A[ 0,0 ]
+##print( 'x = ' )
+##print( x )
+##print( 'x - xold' )
+##print( x - xold )
+##
+###########################################

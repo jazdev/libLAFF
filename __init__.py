@@ -17,3 +17,7 @@ from Trmv_un import Trmv_un_unb_var1, Trmv_un_unb_var2
 from Trmv_ln import Trmv_ln_unb_var1, Trmv_ln_unb_var2
 from Tmvmult_lt import Tmvmult_lt_unb_var1, Tmvmult_lt_unb_var2
 from Tmvmult_ut import Tmvmult_ut_unb_var1, Tmvmult_ut_unb_var2
+
+from GaussianElimination import GaussianElimination_unb
+from ForwardSubstitution import ForwardSubstitution_unb
+

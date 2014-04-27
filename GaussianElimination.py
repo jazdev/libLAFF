@@ -6,7 +6,7 @@ import laff as laff
 
 def GaussianElimination_unb(A):
     """
-	GaussianElimination_unb(matrix, vector, vector)	
+	GaussianElimination_unb(matrix)	
 
 	Computes the Gauss Transform of the input matrix.
 
