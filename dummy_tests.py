@@ -669,6 +669,8 @@ import laff as laff
 
 #########################################
 #       GaussianElimination
+#               &
+#       ForwardSubstitution
 #########################################
 print "Using GaussianElimination_unb"
 L = np.matrix( ' 1, 0, 0. 0;\
@@ -741,4 +743,21 @@ print( 'Original L' )
 print( L )
 print( 'Original U' )
 print( U )
+
+
+
+print( A )
+print( b )
+ForwardSubstitution_unb( A, b )
+print( 'updated b' )
+print( b )
+x[ 3 ] = b[ 3 ] / A[ 3,3 ]
+x[ 2 ] = ( b[ 2 ] - A[ 2,3 ] * x[ 3 ] ) / A[ 2,2 ]
+x[ 1 ] = ( b[ 1 ] - A[ 1,2 ] * x[ 2 ] - A[ 1,3 ] * x[ 3 ] ) / A[ 1,1 ]
+x[ 0 ] = ( b[ 0 ] - A[ 0,1 ] * x[ 1 ] - A[ 0,2 ] * x[ 2 ]- A[ 0,3 ] * x[ 3 ] ) / A[ 0,0 ]
+print( 'x = ' )
+print( x )
+print( 'x - xold' )
+print( x - xold )
+
 #########################################
